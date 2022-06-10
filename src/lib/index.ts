@@ -52,7 +52,7 @@ export async function init(authority: string, clientId: string, newRedirectUri: 
 }
 
 export async function authenticate(scopes?: string[], state?: string) {
-    await msalInstance?.loginRedirect({scopes: scopes ? scopes : defaultScopes, state: state ? state : undefined})
+    await msalInstance?.loginRedirect({scopes: scopes ? scopes : defaultScopes, state: state ? state : undefined, redirectUri})
 }
 
 export async function token(scopes?: string[]): Promise<string> {
